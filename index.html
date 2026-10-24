@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123d78">
+<title>CrimeTrack NG | Crime Reporting & Tracking</title>
+<style>
+:root{--navy:#123d78;--blue:#1769aa;--pale:#edf5ff;--ink:#15243a;--muted:#5f6f84;--white:#fff;--line:#d9e4f1;--green:#177245}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f5f8fc;line-height:1.5}
+header{background:linear-gradient(120deg,#10356b,#1f76bb);color:white;padding:18px 16px 42px}
+.nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:1.2rem;letter-spacing:.2px}.brand span{color:#bfe2ff}
+nav{display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;border-radius:9px;padding:10px 14px;background:var(--blue);color:white;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}nav button{background:rgba(255,255,255,.14);color:white}button.secondary{background:#e8f1fb;color:var(--navy)}button.danger{background:#a92b36}button:focus,input:focus,select:focus,textarea:focus{outline:3px solid #a9d5ff;outline-offset:1px}
+.hero{max-width:1050px;margin:34px auto 0;display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:center}.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 14px}.hero p{max-width:650px;color:#e0efff}.hero-card{background:white;color:var(--ink);border-radius:18px;padding:20px;box-shadow:0 10px 35px #09264b30}.hero-card strong{font-size:1.1rem}.hero-card p{color:var(--muted);margin-bottom:0}
+main{max-width:1050px;margin:-20px auto 50px;padding:0 16px;position:relative}.notice{background:#fff7df;border:1px solid #f1d78a;padding:12px 14px;border-radius:12px;font-size:.92rem;margin-bottom:18px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.tabs button{background:white;color:var(--navy);border:1px solid var(--line)}.tabs button.active{background:var(--navy);color:white}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 5px 20px #102d5010}.panel h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-weight:650;font-size:.92rem}input,select,textarea{width:100%;border:1px solid #cbd8e8;border-radius:9px;padding:11px 12px;font:inherit;background:white;color:var(--ink)}textarea{min-height:110px;resize:vertical}.muted{color:var(--muted);font-size:.9rem}.hidden{display:none!important}.result{margin-top:16px;padding:14px;border-radius:10px;background:var(--pale);border:1px solid #c9def6}.case{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}.status{display:inline-block;border-radius:20px;background:#e8f1fb;color:var(--navy);font-size:.82rem;padding:4px 9px;font-weight:700}.admin-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.footer{text-align:center;color:var(--muted);padding:20px;font-size:.85rem}small{color:var(--muted)}
+@media(max-width:700px){.hero{grid-template-columns:1fr;margin-top:24px}.grid{grid-template-columns:1fr}.panel{padding:17px}header{padding-bottom:35px}.hero-card{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">🛡️ CrimeTrack <span>NG</span></div>
+    <nav aria-label="Main navigation">
+      <button data-view="home">Home</button><button data-view="report">Report a crime</button><button data-view="track">Track report</button><button data-view="admin">Officer demo</button>
+    </nav>
+  </div>
+  <section class="hero">
+    <div><h1>Report safely.<br>Track progress.</h1><p>A student demonstration of a web-based crime reporting and tracking system, designed for mobile and desktop screens.</p><button data-view="report">Start a report</button> <button class="secondary" data-view="track">Track an existing report</button></div>
+    <div class="hero-card"><strong>How it works</strong><p>Submit incident details → receive a reference number → check the demonstration status. In a real system, reports must be reviewed by authorised personnel.</p></div>
+  </section>
+</header>
+<main>
+  <div class="notice"><strong>Demonstration only:</strong> This prototype stores sample reports only in this browser. Do not enter real names, addresses, evidence or confidential police information. It is not connected to the Nigeria Police Force and is not an emergency service.</div>
+  <div class="tabs">
+    <button class="active" data-view="home">Overview</button><button data-view="report">Submit report</button><button data-view="track">Track report</button><button data-view="admin">Demo dashboard</button>
+  </div>
+  <section id="home" class="panel">
+    <h2>Welcome to CrimeTrack NG</h2>
+    <p>This prototype demonstrates the core user journey for a school project. It is responsive and can be opened on an Android phone or computer.</p>
+    <div class="grid">
+      <div class="case"><h3>📝 Submit a report</h3><p class="muted">Describe an incident using fictional information for testing.</p><button data-view="report">Open reporting form</button></div>
+      <div class="case"><h3>🔎 Track a report</h3><p class="muted">Enter a reference number to see the status of a sample submission.</p><button data-view="track">Open tracking</button></div>
+      <div class="case"><h3>🛡️ Officer dashboard</h3><p class="muted">Review test cases and change demonstration status.</p><button data-view="admin">Open demo dashboard</button></div>
+      <div class="case"><h3>🔐 Next development stage</h3><p class="muted">Add server-side authentication, a database, audit logs and secure evidence storage before any real-world use.</p></div>
+    </div>
+  </section>
+  <section id="report" class="panel hidden">
+    <h2>Submit a crime report</h2><p class="muted">Use fictional data only. Required fields are marked with *.</p>
+    <form id="reportForm" class="grid">
+      <div class="field"><label for="reporter">Reporter name or alias *</label><input id="reporter" required maxlength="70" placeholder="e.g. Demo User"></div>
+      <div class="field"><label for="contact">Contact (optional)</label><input id="contact" maxlength="80" placeholder="Demo email or phone"></div>
+      <div class="field"><label for="type">Incident type *</label><select id="type" required><option value="">Choose type</option><option>Theft</option><option>Fraud</option><option>Assault</option><option>Property damage</option><option>Missing person</option><option>Cybercrime</option><option>Other</option></select></div>
+      <div class="field"><label for="date">Incident date *</label><input id="date" type="date" required></div>
+      <div class="field"><label for="location">General location *</label><input id="location" required maxlength="100" placeholder="e.g. Demo area, Oyo"></div>
+      <div class="field"><label for="urgency">Urgency *</label><select id="urgency" required><option>Normal</option><option>Urgent</option></select></div>
+      <div class="field full"><label for="description">Incident description *</label><textarea id="description" required maxlength="1200" placeholder="Describe a fictional incident for testing."></textarea></div>
+      <div class="field full"><label><input id="consent" type="checkbox" required style="width:auto"> I understand this is a demonstration and will not submit real or sensitive information.</label></div>
+      <div class="field full"><button type="submit">Submit demo report</button></div>
+    </form>
+    <div id="reportResult" class="result hidden" aria-live="polite"></div>
+  </section>
+  <section id="track" class="panel hidden">
+    <h2>Track a report</h2><p class="muted">Enter the reference number shown after submitting a demo report.</p>
+    <form id="trackForm" class="grid"><div class="field"><label for="ref">Report reference number</label><input id="ref" required placeholder="e.g. CTNG-ABC123"></div><div class="field" style="justify-content:end"><button type="submit">Check status</button></div></form>
+    <div id="trackResult" class="result hidden" aria-live="polite"></div>
+  </section>
+  <section id="admin" class="panel hidden">
+    <h2>Officer dashboard (prototype)</h2>
+    <div class="notice">This dashboard has no real authentication. It is for demonstration only and must not be treated as a secure officer portal.</div>
+    <div class="admin-tools"><label for="demoPin">Demo access code</label><input id="demoPin" type="password" placeholder="Enter DEMO2026" style="max-width:220px"><button id="unlock">Open dashboard</button></div>
+    <div id="adminContent" class="hidden"><p class="muted">Sample reports stored in this browser appear below. Change status to demonstrate case tracking.</p><div id="caseList"></div></div>
+  </section>
+</main>
+<div class="footer">CrimeTrack NG · Student project prototype · Not an official reporting channel</div>
+<script>
+const STORE='crimetrack_ng_demo_reports_v1';
+const statuses=['Received','Under review','Under investigation','Closed'];
+function getReports(){try{return JSON.parse(localStorage.getItem(STORE)||'[]')}catch(e){return []}}
+function saveReports(r){localStorage.setItem(STORE,JSON.stringify(r))}
+function makeRef(){return 'CTNG-'+Math.random().toString(36).slice(2,8).toUpperCase()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function show(view){document.querySelectorAll('main section[id]').forEach(s=>s.classList.toggle('hidden',s.id!==view));document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===view));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
+document.getElementById('date').value=new Date().toISOString().slice(0,10);
+document.getElementById('reportForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const report={ref:makeRef(),reporter:document.getElementById('reporter').value.trim(),contact:document.getElementById('contact').value.trim(),type:document.getElementById('type').value,date:document.getElementById('date').value,location:document.getElementById('location').value.trim(),urgency:document.getElementById('urgency').value,description:document.getElementById('description').value.trim(),status:'Received',created:new Date().toISOString()};
+ const all=getReports();all.unshift(report);saveReports(all);
+ const out=document.getElementById('reportResult');out.classList.remove('hidden');out.innerHTML='<strong>Demo report submitted.</strong><p>Your reference number is:</p><h3>'+esc(report.ref)+'</h3><p>Save this number to track the sample report. No police agency has received this submission.</p><button type="button" id="trackThis">Track this report</button>';
+ document.getElementById('trackThis').onclick=()=>{document.getElementById('ref').value=report.ref;show('track');document.getElementById('trackForm').requestSubmit()};
+ e.target.reset();document.getElementById('date').value=new Date().toISOString().slice(0,10);
+});
+document.getElementById('trackForm').addEventListener('submit',e=>{
+ e.preventDefault();const ref=document.getElementById('ref').value.trim().toUpperCase();const r=getReports().find(x=>x.ref===ref);const out=document.getElementById('trackResult');out.classList.remove('hidden');
+ out.innerHTML=r?'<strong>Demo report found</strong><p><b>Reference:</b> '+esc(r.ref)+'</p><p><b>Type:</b> '+esc(r.type)+'</p><p><b>Date:</b> '+esc(r.date)+'</p><p><b>Status:</b> <span class="status">'+esc(r.status)+'</span></p><p class="muted">This status belongs only to the local demo.</p>':'No demo report was found for that reference number in this browser.';
+});
+document.getElementById('unlock').addEventListener('click',()=>{if(document.getElementById('demoPin').value==='DEMO2026'){document.getElementById('adminContent').classList.remove('hidden');renderCases()}else alert('For this prototype, enter DEMO2026. This is not secure authentication.')});
+function renderCases(){const root=document.getElementById('caseList');const all=getReports();if(!all.length){root.innerHTML='<p>No demo reports yet. Submit one using the reporting form.</p>';return}
+root.innerHTML=all.map(r=>'<article class="case"><p><strong>'+esc(r.ref)+'</strong> · '+esc(r.type)+' · '+esc(r.date)+'</p><p>'+esc(r.location)+' — '+esc(r.description)+'</p><p>Current status: <span class="status">'+esc(r.status)+'</span></p><label for="status-'+esc(r.ref)+'">Update demo status</label> <select id="status-'+esc(r.ref)+'" data-ref="'+esc(r.ref)+'">'+statuses.map(s=>'<option '+(s===r.status?'selected':'')+'>'+s+'</option>').join('')+'</select> <button data-save="'+esc(r.ref)+'">Save status</button></article>').join('');
+root.querySelectorAll('[data-save]').forEach(b=>b.addEventListener('click',()=>{const ref=b.dataset.save;const next=root.querySelector('[data-ref="'+ref+'"]').value;const rows=getReports().map(r=>r.ref===ref?{...r,status:next}:r);saveReports(rows);renderCases()}));
+}
+</script>
+</body>
+</html>
